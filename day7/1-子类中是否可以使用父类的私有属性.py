@@ -3,7 +3,7 @@ class A:
         self.__age = 18
 
     def base_age(self):
-        print(self.__age)
+        print(self.__age)   # 公共方法访问私有属性
 
 
 class B(A):
