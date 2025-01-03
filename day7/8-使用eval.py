@@ -23,4 +23,5 @@ if __name__ == '__main__':
     # read_conf()
     # os.system('rm -r file4')
     eval("__import__('os').system('ls')")  # 不要用eval执行前端发过来的任何子串
+    # eval将字符串 当成 有效的表达式 来求值 并 返回计算结果
     # pass
