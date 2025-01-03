@@ -60,8 +60,12 @@ def use_stat(file_path):
     from time import strftime
     from time import gmtime
     gm_time = gmtime(file_info.st_mtime)
+    # 使用 gmtime() 将文件的最后修改时间（时间戳）转换为 UTC 时间，并用 strftime() 格式化为可读的时间字符串。
+    print(gm_time)
+    # time.struct_time(tm_year=2024, tm_mon=12, tm_mday=31, tm_hour=11, tm_min=50, tm_sec=53, tm_wday=1, tm_yday=366, tm_isdst=0)
+
     # 把秒数转为字符串时间
-    print(strftime("%Y-%m-%d %H:%M:%S", gm_time))
+    print(strftime("%Y-%m-%d %H:%M:%S", gm_time))   # 2024-12-31 11:50:53
 
 
 if __name__ == '__main__':
@@ -69,4 +73,4 @@ if __name__ == '__main__':
     # use_dir_func()
     # change_dir()
     # scan_dir('.', 0)
-    use_stat('file4')
+    use_stat('file5')
