@@ -48,7 +48,7 @@ class BinaryTree:
     def level_order(self):
         help_queue = []
         help_queue.append(self.root)  # 树根入队
-        while help_queue:
+        while help_queue:   # 队列不空的情况下
             out_node: Node = help_queue.pop(0)  # 出队
             print(out_node.elem, end=' ')  # 打印出队元素的元素值
             if out_node.lchild:

@@ -21,7 +21,7 @@ class Sort:
         self.arr = [0] * n
         self.random_data()
 
-    def random_data(self):      # 生成随机列表
+    def random_data(self):  # 生成随机列表
         for i in range(self.len):
             self.arr[i] = random.randint(0, 99)
 
@@ -29,7 +29,7 @@ class Sort:
         arr = self.arr
         k = i = left
         random_pos = random.randint(left, right)  # 如何避免陷入最坏时间复杂度
-        arr[random_pos], arr[right] = arr[right], arr[random_pos]   # 先把pivos放右边
+        arr[random_pos], arr[right] = arr[right], arr[random_pos]  # 先把pivos放右边
         for i in range(left, right):
             if arr[i] < arr[right]:  # 某个位置的值小于分割值，就拿它和k指向的位置交换
                 arr[i], arr[k] = arr[k], arr[i]
@@ -64,12 +64,12 @@ class Sort:
                 break
 
     def heap_sort(self):  # 建堆O(n)，调整堆O(logn)
-        # 把列表调整为大根堆
+        # 1.把列表调整为大根堆
         for parent in range(self.len // 2 - 1, -1, -1):
             self.adjust_max_heap(parent, self.len)
         arr = self.arr
-        arr[0], arr[self.len - 1] = arr[self.len - 1], arr[0]  # 堆顶元素和最后一个元素交换
-        for arr_len in range(self.len - 1, 1, -1):
+        arr[0], arr[self.len - 1] = arr[self.len - 1], arr[0]  # 2.堆顶元素和最后一个元素交换
+        for arr_len in range(self.len - 1, 1, -1):  # 3.把剩余的元素继续调整为大根堆，循环往复直到有序
             self.adjust_max_heap(0, arr_len)
             arr[0], arr[arr_len - 1] = arr[arr_len - 1], arr[0]
 
@@ -89,7 +89,7 @@ class Sort:
 
 if __name__ == '__main__':
     count = 100000
-    my_sort = Sort(count)   # 生成待排序列表
+    my_sort = Sort(count)  # 生成待排序列表
     print(my_sort.arr)
 
     # my_sort.quick_sort(0, count - 1)
@@ -97,5 +97,4 @@ if __name__ == '__main__':
 
     my_sort.heap_sort()
     print(my_sort.arr)
-    my_sort.test_time_use(my_sort.heap_sort)    # 堆排用时
-
+    my_sort.test_time_use(my_sort.heap_sort)  # 堆排用时
