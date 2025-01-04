@@ -30,9 +30,10 @@ def use_r():
 
 
 def use_option():
-    print(re.match(r'\w*','abc函',flags=re.A).group())   # 忽略汉字
-    print(re.match(r'a*', 'aA',flags=re.I).group())     # 区分大小写
-    print(re.match(r'.*','abc\ndef',flags=re.S).group())    # 匹配上\n
+    print(re.match(r'\w*', 'abc函', flags=re.A).group())  # 忽略汉字
+    print(re.match(r'a*', 'aA', flags=re.I).group())  # 区分大小写
+    print(re.match(r'.*', 'abc\ndef', flags=re.S).group())  # 匹配上\n
+
 
 if __name__ == '__main__':
     use_greedy()

@@ -6,7 +6,7 @@ import copy
 
 
 def use_list():
-    a = [1, 2, 3]
+    a = [1, 2, 3]   # 由于 a 只包含整数（不可变对象），所以浅拷贝和深拷贝的效果是一样的：c 和 a 没有共享任何对象的引用，c 是一个全新的列表。
     b = a
     # c = copy.copy(a)      # 与下一行代码等价
     c = a.copy()
@@ -27,7 +27,7 @@ def use_copy():
     """
     a = [1, 2]
     b = [3, 4]
-    c = [a, b]
+    c = [a, b]  # c包含可变类型
     d = copy.copy(c)
     print(id(c))
     print(id(d))  # d与c地址不同
@@ -82,7 +82,7 @@ def use_copy_own_obj():
 
 
 if __name__ == '__main__':
-    # use_list()
+    use_list()
     # use_copy()
     # use_deepcopy()
-    use_copy_own_obj()
+    # use_copy_own_obj()
