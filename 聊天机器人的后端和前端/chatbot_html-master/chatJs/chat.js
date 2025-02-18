@@ -45,7 +45,7 @@ $(function () {
 
 			show("./chatImages/woman.png", $(".footer input").val(), "show");
 			// 替换为各自的接口地址
-			var url = "http://47.120.77.99:8000/api/chatbot";
+			var url = "http://localhost:6006/api/chatbot";
 			
 			$(".footer input").val("").next().css('background', '#ddd'); //清空input
 			$.ajax({
